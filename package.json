@@ -1,10 +1,16 @@
 {
   "name": "sassdoc-theme-budocs",
-  "version": "0.1.0",
-  "description": "A modified version of Sassdoc's default theme",
+  "description": "A custom theme for SassDoc based on the default theme.",
+  "title": "SassDoc Default Theme",
+  "author": "SassDoc team",
+  "version": "2.4.3",
   "keywords": [
     "sassdoc-theme"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashleykolodziej/budocs.git"
+  },
   "files": [
     "assets",
     "views",
@@ -15,16 +21,6 @@
     "README.md"
   ],
   "main": "dist",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ashleykolodziej/budocs.git"
-  },
-  "author": "dbox",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ashleykolodziej/budocs/issues"
-  },
   "dependencies": {
     "chroma-js": "^0.6.3",
     "es6-denodeify": "^0.1.0",
@@ -36,5 +32,9 @@
     "swig": "1.4.0",
     "swig-extras": "^0.0.1"
   },
-  "homepage": "https://github.com/ashleykolodziej/budocs#readme"
+  "devDependencies": {
+    "babel": "^4.4.0",
+    "jshint": "^2.6.0",
+    "uglify-js": "^2.4.15"
+  }
 }

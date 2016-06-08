@@ -7,7 +7,7 @@
       "variable": ["description", "type", "property", "require", "example", "usedby", "since", "see", "todo", "link", "author"]
     },
     "access": ["public", "private"],
-    "alias": true,
+    "alias": false,
     "watermark": true
   },
   "groups": {
