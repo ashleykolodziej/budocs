@@ -34,7 +34,7 @@ $level-3: $level-2 + 2em;
   font-size: 0.9em;
 
   a {
-    padding: 0.5em $level-3;
+    padding: 0.5em $level-1;
     display: block;
     text-decoration: none;
     color: $black;
@@ -119,6 +119,12 @@ $level-3: $level-2 + 2em;
   font-size: 1em;
   margin: 0;
   padding: 1.45em;
+}
+
+.sidebar__version {
+  font-size: 12px;
+  color: #aaa;
+  display: block;
 }
 
 /**

@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		sass: {
-			docs: {
+			compile: {
 				options: {
 					style: 'compressed',
 					loadPath: 'css-dev'

@@ -28,13 +28,15 @@
 
         {# If items to be displayed in type #}
         {% if items.length > 0 %}
-          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="{{ group_name + '-' + type }}"><a href="#{{ group_name }}-{{ type }}">{{ (type + 's') }}</a></p>
 
           {# Loop over the items #}
           {% for item in items %}
             {% if loop.first %}<ul class="list-unstyled">{% endif %}
             <li class="sidebar__item  sassdoc__item" data-group="{{ group_name }}" data-name="{{ item.context.name }}" data-type="{{ item.context.type }}">
-              <a href="#{{ group_name }}-{{ item.context.type }}-{{ item.context.name }}">{{ item.context.name }}
+              <a href="#{{ group_name }}-{{ item.context.type }}-{{ item.context.name }}">
+                {% if item.context.type == "placeholder" %}%{{ item.context.name }}{% endif %}
+                {% if item.context.type == "variable" %}${{ item.context.name }}{% endif %}
+                {% if item.context.type == "mixin" %}@include {{ item.context.name }}{% endif %}
               {% if item.access[0] == "private" %}<span class="sidebar__annotation  sidebar__annotation--private">private</span>{% endif %}
               {% if item.alias != false %}<span class="sidebar__annotation  sidebar__annotation--alias">alias</span>{% endif %}
               </a>
