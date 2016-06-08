@@ -3,7 +3,11 @@
     <span class="item__access">[{{ item.access }}]</span>
   {% endif %}
 
-  <a class="item__name" href="#{{ item.context.type }}-{{ item.context.name }}">{{ item.context.name }}</a>
+  <a class="item__name" href="#{{ item.context.type }}-{{ item.context.name }}">
+      {% if item.context.type == "placeholder" %}%{{ item.context.name }}{% endif %}
+      {% if item.context.type == "variable" %}${{ item.context.name }}{% endif %}
+      {% if item.context.type == "mixin" %}@include {{ item.context.name }}{% endif %}
+  </a>
 
   {% if display.alias and item.aliased.length > 0 %}
     <span class="item__aliased">(aliased as

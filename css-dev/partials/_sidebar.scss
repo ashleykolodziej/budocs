@@ -54,6 +54,7 @@ $level-3: $level-2 + 2em;
  */
 .sidebar__item--heading {
   padding: 1em $level-1;
+  border-top: 1px solid #ccc;
 
   a {
     font-weight: bold;
@@ -145,5 +146,23 @@ $level-3: $level-2 + 2em;
 
   @include on-event {
     background: #DFDFDF;
+  }
+}
+
+.sidebar .list-unstyled {
+  margin-bottom: 0;
+}
+[data-type="placeholder"] a {
+  color: #690;
+}
+[data-type="variable"] a {
+  color: #a67f59;
+}
+
+.sidebar__item--heading {
+  margin: 0;
+
+  + div {
+    padding-bottom: 1em;
   }
 }
