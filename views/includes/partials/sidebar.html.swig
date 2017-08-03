@@ -20,18 +20,21 @@
 
     {# Loop over the groups #}
     {% for group_name, group in data.byGroupAndType %}
-      <p class="sidebar__item  sidebar__item--heading" data-slug="{{ group_name }}"><a href="#{{ group_name }}">{{ groups[group_name] }}</a></p>
+      <p class="sidebar__item  sidebar__item--heading" data-slug="{{ group_name }}"><a href="#{{ group_name }}">{{ groups[group_name] | capitalize }}</a></p>
 
       {# Loop over the types #}
       {% for type, items in group %}
-        {% if loop.first %}<div>{% endif %}
+        {% if loop.first %}<div class="sidebar__group">{% endif %}
 
         {# If items to be displayed in type #}
         {% if items.length > 0 %}
 
           {# Loop over the items #}
           {% for item in items %}
-            {% if loop.first %}<ul class="list-unstyled">{% endif %}
+            {% if loop.first %}
+            <h4 class="sidebar__group--title title-{{ item.context.type }}">{{ group_name | capitalize }} {% if item.context.type == "css" %}{{ item.context.type | upper }} classes{% else %}{{ item.context.type + 's' }}{% endif %}</h4>
+            <ul class="list-unstyled list-{{ item.context.type }}">
+            {% endif %}
             <li class="sidebar__item  sassdoc__item" data-group="{{ group_name }}" data-name="{{ item.context.name }}" data-type="{{ item.context.type }}">
               <a href="#{{ group_name }}-{{ item.context.type }}-{{ item.context.name }}">
                 {% if item.context.type == "placeholder" %}

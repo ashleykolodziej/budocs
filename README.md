@@ -11,3 +11,7 @@ Because this is likely to be the most used theme of all, it is not as simple as 
 There are some possibilites to customise the theme's view. Essentially what's being displayed, what's not, and what are the project informations to be displayed in the header and footer.
 
 To learn how to customise the theme's view, please read [the documentation on SassDoc's site](http://sassdoc.com/customising-the-view/). Fear not! It's all about creating a configuration file. No big deal.
+
+## Updating theme CSS
+
+This theme is compiled with Sass. `sass --watch css-dev:assets/css`
