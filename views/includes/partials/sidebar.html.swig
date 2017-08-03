@@ -32,7 +32,7 @@
           {# Loop over the items #}
           {% for item in items %}
             {% if loop.first %}
-            <h4 class="sidebar__group--title title-{{ item.context.type }}">{{ group_name | capitalize }} {% if item.context.type == "css" %}{{ item.context.type | upper }} classes{% else %}{{ item.context.type + 's' }}{% endif %}</h4>
+            <h4 class="sidebar__group--title title-{{ item.context.type }}">{{ groups[group_name] | capitalize }} {% if item.context.type == "css" %}{{ item.context.type | upper }} classes{% else %}{{ item.context.type + 's' }}{% endif %}</h4>
             <ul class="list-unstyled list-{{ item.context.type }}">
             {% endif %}
             <li class="sidebar__item  sassdoc__item" data-group="{{ group_name }}" data-name="{{ item.context.name }}" data-type="{{ item.context.type }}">
