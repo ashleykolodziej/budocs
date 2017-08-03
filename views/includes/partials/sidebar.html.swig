@@ -35,6 +35,7 @@
             <li class="sidebar__item  sassdoc__item" data-group="{{ group_name }}" data-name="{{ item.context.name }}" data-type="{{ item.context.type }}">
               <a href="#{{ group_name }}-{{ item.context.type }}-{{ item.context.name }}">
                 {% if item.context.type == "placeholder" %}%{{ item.context.name }}{% endif %}
+                {% if item.context.type == "class" %}%{{ item.context.name }}{% endif %}
                 {% if item.context.type == "variable" %}${{ item.context.name }}{% endif %}
                 {% if item.context.type == "mixin" %}@include {{ item.context.name }}{% endif %}
               {% if item.access[0] == "private" %}<span class="sidebar__annotation  sidebar__annotation--private">private</span>{% endif %}
