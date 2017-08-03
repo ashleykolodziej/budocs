@@ -7,6 +7,7 @@
       {% if item.context.type == "placeholder" %}%{{ item.context.name }}{% endif %}
       {% if item.context.type == "variable" %}${{ item.context.name }}{% endif %}
       {% if item.context.type == "mixin" %}@include {{ item.context.name }}{% endif %}
+      {% if item.context.type == "css" %}{{ item.context.name }}{% endif %}
   </a>
 
   {% if display.alias and item.aliased.length > 0 %}
