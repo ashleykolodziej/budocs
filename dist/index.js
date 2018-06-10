@@ -61,3 +61,17 @@ module.exports = function (dest, ctx) {
     return writeFile(path.resolve(dest, "index.html"), html);
   })]);
 };
+
+module.exports.annotations = [];
+
+module.exports.annotations.push(function () {
+  return {
+    name: 'examplehtml',
+    parse (text) {
+      return text.trim()
+    },
+    default: function (comment) { return 0; },
+    autofill: function (comment) {},
+    multiple: true
+  };
+});
