@@ -21,7 +21,7 @@
 
 <div class="example">
 	{% for example in item.examplehtml %}
-		{% set path = '../../../../../example_html/' + example + '.html' %}
+		{% set path = '../../../../../example_html/' + example + '.html.swig' %}
 		{% include path %}
 	{% endfor %}
 </div>
